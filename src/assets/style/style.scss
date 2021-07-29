@@ -1,0 +1,30 @@
+#app {
+    background-color: rgb(241, 197, 197);
+}
+.aff-container {
+    height: 100%;
+    background-color: rgb(233, 200, 233);
+}
+
+// .allOffers {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+// }
+
+// .allOffers__card {
+//     display: grid;
+//     width: 114em;
+//     grid-gap: 6rem;
+//     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+// }
+.appBar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .m-0 {
+    margin: 0;
+    padding: 0;
+    height: 76px;
+  }
