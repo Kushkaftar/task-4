@@ -57,4 +57,7 @@ export default {
 .offerCard-geo {
   width: 200px;
 }
+.offerCard-text {
+  overflow: hidden;
+}
 </style>

@@ -18,11 +18,10 @@
       </v-col>
       <v-spacer></v-spacer>
       <div class="appBar-flex">
-        <v-badge color="green" content="6" overlap>
-          <v-btn icon large>
-            <v-icon large>mdi-message-text-outline</v-icon>
-          </v-btn>
-        </v-badge>
+        <v-btn icon large>
+          <v-icon large>mdi-message-text-outline</v-icon>
+        </v-btn>
+
         <v-badge color="green" :content="countMessage" overlap>
           <v-btn icon large @click="dialog = true">
             <v-icon large>mdi-bell-outline</v-icon>
