@@ -9,13 +9,14 @@
 import { mapGetters } from "vuex";
 
 export default {
+  name: "Offer",
+  components: {},
   data: () => ({
     offer: {},
   }),
-  name: "Offer",
   methods: {
     getOfferInfo(id) {
-      this.offer = this.ALL_OFFERS.filter((el) => el.id === id);
+      this.offer = this.ALL_OFFERS.data.filter((el) => el.id === id);
     },
   },
   computed: {

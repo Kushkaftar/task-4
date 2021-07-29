@@ -6,7 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    allOffers: [],
+    allOffers: {
+      data: [],
+      err: false
+    },
     message: [
       {
         id: 1,
@@ -24,7 +27,10 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_ALL_OFFERS: (state, allOffers) => {
-      state.allOffers = allOffers
+      state.allOffers.data = allOffers
+    },
+    SET_ALL_OFFERS_ERR: (state, err) => {
+      state.allOffers.err = err
     },
     MESSAGE_IS_READ: (state, id) => {
       state.message.forEach((el) => {
@@ -36,9 +42,15 @@ export default new Vuex.Store({
   },
   actions: {
     async GET_ALL_OFFERS({ commit }) {
-      const response = await requestAxios('offers')
-      commit("SET_ALL_OFFERS", response.data.data)
-      return response.data.data
+      try {
+        const response = await requestAxios('offers')
+        commit("SET_ALL_OFFERS", response.data.data)
+        return response.data.data
+      } catch (err) {
+        commit("SET_ALL_OFFERS_ERR", true)
+        console.error(err, "edrfhgberth")
+      }
+
     },
   },
   modules: {

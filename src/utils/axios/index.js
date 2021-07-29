@@ -5,7 +5,6 @@ const requestAxios = async function (path) {
         const resp = await axios(`https://api.affstar.com/api/public/${path}`, {
             method: "GET"
         })
-        // console.log('resp = ', resp)
         return resp
     } catch (err) {
         console.error(err, "err");
